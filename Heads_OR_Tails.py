@@ -1,7 +1,17 @@
 import random
 
 # Taking input and converting it to int datatype.
-player1 = int(input('Player One please make a choice. Press "1" for Heads or press "2" for Tails:  '))
+while True:
+    player1 = input('Player One please make a choice. Press "1" for Heads or press "2" for Tails:  ')
+    if player1.isdigit():
+        player1 = int(player1)
+        if player1 == 1 or player1 == 2:
+            break
+        else:
+            print('Invalid Entry. Please type either "1" or "2" ')
+    else:
+        print('Please enter a digit')
+
 
 # generating a random result using Random Module.
 result = random.randint(1,2)
